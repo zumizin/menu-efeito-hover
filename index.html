@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Contorno para Sólido</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1e1e1e;
+}
+
+ul {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 4em;
+    letter-spacing: 4px;
+    display: inline-block;
+    text-transform: uppercase;
+
+    color: transparent;
+    -webkit-text-stroke: 1px #3a8dff;
+
+    transition: 0.4s;
+    padding: 0 20px;
+}
+
+/* barra inicial (esquerda) */
+ul li a::before {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: -12px;
+    width: 6px;
+    height: 70%;
+    background: #3a8dff;
+    transition: 0.4s ease;
+}
+
+/* hover */
+ul li a:hover {
+    color: #3a8dff;
+    -webkit-text-stroke: 1px transparent;
+}
+
+/* barra vai pra direita */
+ul li a:hover::before {
+    left: calc(100% + 6px);
+    background: #3a8dff;
+    height: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<ul>
+    <li><a href="#">Contact</a></li>
+    <li><a href="#">Team</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Home</a></li>
+</ul>
+
+</body>
+</html>
